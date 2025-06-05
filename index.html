@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhargav Jangam - AI/ML & Backend Developer Portfolio</title>
+    <meta name="description" content="AWS Certified Python Developer with 4+ years of experience in AI/ML and backend development. Expertise in Flask, Django, TensorFlow, and PyTorch.">
+    <meta name="author" content="Bhargav Jangam">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .bg-gradient {
+            background: linear-gradient(135deg, #f8fafc, #dbeafe, #e0e7ff);
+            min-height: 100vh;
+        }
+        
+        .bg-white-transparent {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        .bg-blue-gradient {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+        }
+        
+        .bg-green-gradient {
+            background: linear-gradient(135deg, #10b981, #059669);
+        }
+        
+        .bg-purple-gradient {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        }
+        
+        .hero {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            color: #6b7280;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: #2563eb;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        .experience-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        
+        .experience-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .experience-header {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .experience-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .experience-company {
+            color: #bfdbfe;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #bfdbfe;
+        }
+        
+        .experience-content {
+            padding: 1.5rem;
+        }
+        
+        .achievement-list {
+            list-style: none;
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .achievement-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: #3b82f6;
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+        
+        .skills-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        
+        .skills-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .skills-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .skill-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: background-color 0.3s;
+        }
+        
+        .skill-tag:hover {
+            background: #bfdbfe;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .project-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-0.5rem);
+        }
+        
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        
+        .project-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .project-icon {
+            background: #dbeafe;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .project-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .project-year {
+            background: transparent;
+            border: 1px solid #d1d5db;
+            color: #6b7280;
+            padding: 0.125rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+        
+        .project-description {
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-list {
+            list-style: none;
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #374151;
+        }
+        
+        .highlight-dot {
+            width: 0.375rem;
+            height: 0.375rem;
+            background: #10b981;
+            border-radius: 50%;
+        }
+        
+        .education-card {
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-header {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .cert-header {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .cert-item {
+            border-left: 4px solid #8b5cf6;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cert-title {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        
+        .cert-issuer {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
+        }
+        
+        .cert-date {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, #fef3c7, #fed7aa);
+            border-radius: 0.5rem;
+        }
+        
+        .award-icon {
+            color: #d97706;
+            margin-top: 0.25rem;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #2563eb, #6366f1);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-subtitle {
+            font-size: 1.25rem;
+            color: #bfdbfe;
+            margin-bottom: 2rem;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+        
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+        
+        .btn-blue {
+            background: #1d4ed8;
+            color: white;
+        }
+        
+        .btn-blue:hover {
+            background: #1e40af;
+        }
+        
+        .btn-gray {
+            background: #1f2937;
+            color: white;
+        }
+        
+        .btn-gray:hover {
+            background: #111827;
+        }
+        
+        .footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .icon {
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+        }
+        
+        .icon-lg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .project-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .experience-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>BHARGAV JANGAM</h1>
+                <p>AWS Certified Python Developer | AI/ML & Backend Specialist</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <span>+91 7981270438</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <span>bhargavj2000@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://linkedin.com/in/bhargav-jangam/">
+                            <span class="icon">💼</span>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://github.com/jbhargav">
+                            <span class="icon">💻</span>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2>Professional Summary</h2>
+                    <p>AWS Certified Python Developer with 4+ years of experience in AI/ML and backend development. 
+                    Expertise in developing scalable solutions with Flask, Django, TensorFlow, and PyTorch. 
+                    Proven track record in optimizing algorithms, automating workflows, and implementing computer 
+                    vision solutions that enhanced software performance by up to 95%.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="section bg-white-transparent">
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="grid">
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="experience-title">AI/ML and Backend Developer</div>
+                            <div class="experience-company">Continual Engine</div>
+                            <div class="experience-meta">
+                                <span>📅 May 2021 – Present</span>
+                                <span>📍 Bangalore, India</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="achievement-list">
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Engineered image parsing solutions for automated alt-text generation achieving 95% accuracy, processing 1000+ images daily</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Developed and optimized OCR models using Python, OpenCV improving text extraction accuracy by 40%</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Built RESTful APIs with Django that reduced processing time by 35% and enhanced cross-platform compatibility</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Created automated eBook content extraction tool increasing data collection efficiency by 90%</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Optimized PDF reading order algorithms reducing processing time by 50%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="experience-card">
+                        <div class="experience-header">
+                            <div class="experience-title">Software Developer</div>
+                            <div class="experience-company">ModulusPi</div>
+                            <div class="experience-meta">
+                                <span>📅 August 2020 – April 2021</span>
+                                <span>📍 Hyderabad, India</span>
+                            </div>
+                        </div>
+                        <div class="experience-content">
+                            <ul class="achievement-list">
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Architected Forecast AI web application improving sales prediction accuracy by 30% using AWS cloud</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Developed Naive Bayes NLP classification model with 85% accuracy for product categorization</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <div class="achievement-dot"></div>
+                                    <span>Led company website development using ReactJS, reducing load time by 40% and enhancing UX</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="grid grid-3">
+                    <div class="skills-card">
+                        <div class="skills-title">
+                            <span class="icon">💻</span>
+                            Programming Languages
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Bootstrap</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <div class="skills-title">
+                            <span class="icon">⚙️</span>
+                            Frameworks & Libraries
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">Celery</span>
+                            <span class="skill-tag">ReactJS</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">Selenium</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <div class="skills-title">
+                            <span class="icon">☁️</span>
+                            Cloud & DevOps
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-tag">AWS (Certified Solutions Architect)</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <div class="skills-title">
+                            <span class="icon">🗄️</span>
+                            Databases & Tools
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <div class="skills-title">
+                            <span class="icon">🧠</span>
+                            Core Competencies
+                        </div>
+                        <div class="skills-list">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Data Analytics</span>
+                            <span class="skill-tag">AI Integration</span>
+                            <span class="skill-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section bg-white-transparent">
+            <div class="container">
+                <h2>Technical Projects</h2>
+                <div class="grid grid-2">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="icon-lg">🧠</span>
+                                </div>
+                                <div>
+                                    <div class="project-title">Intelligent Document Retrieval System using RAG</div>
+                                    <span class="project-year">2025</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="project-description">Developed a Retrieval-Augmented Generation system using Python, LangChain, and Pinecone</p>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>87% relevancy rate</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>500+ documents/hour</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>Natural language queries</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="icon-lg">💻</span>
+                                </div>
+                                <div>
+                                    <div class="project-title">GUI Web Scraper with Selenium</div>
+                                    <span class="project-year">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="project-description">Engineered Python-based GUI application for automated data extraction</p>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>99% data accuracy</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>85% time reduction</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>Tkinter interface</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="icon-lg">🧠</span>
+                                </div>
+                                <div>
+                                    <div class="project-title">Face Recognition System</div>
+                                    <span class="project-year">2022</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="project-description">Developed face recognition application using Python, OpenCV and deep learning</p>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>92% accuracy</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>60% adoption increase</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>Intuitive UI</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-info">
+                                <div class="project-icon">
+                                    <span class="icon-lg">💻</span>
+                                </div>
+                                <div>
+                                    <div class="project-title">Object Detection Smart Billing System</div>
+                                    <span class="project-year">2021</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="project-description">Built web-based retail solution using Faster R-CNN</p>
+                        <ul class="highlight-list">
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>90% recognition accuracy</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>65% faster checkout</span>
+                            </li>
+                            <li class="highlight-item">
+                                <div class="highlight-dot"></div>
+                                <span>Automated billing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <!-- Education -->
+                    <div class="education-card">
+                        <div class="education-header">
+                            <h3>🎓 Education</h3>
+                        </div>
+                        <div class="card" style="margin: 0;">
+                            <h4 style="font-size: 1.125rem; font-weight: 600;">Bachelor of Technology in Computer Science</h4>
+                            <p style="color: #2563eb; margin: 0.5rem 0;">Rajiv Gandhi University of Knowledge Technologies, IIIT</p>
+                            <p style="color: #6b7280; margin: 0.5rem 0;">CGPA: 8.8/10</p>
+                            <p style="color: #9ca3af; font-size: 0.875rem;">📍 Nuzvid, India • May 2022</p>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="education-card">
+                        <div class="cert-header">
+                            <h3>🏆 Certifications</h3>
+                        </div>
+                        <div class="card" style="margin: 0;">
+                            <div class="cert-item">
+                                <div class="cert-title">AWS Solutions Architect Associate (SAA-C03)</div>
+                                <div class="cert-issuer">Amazon Web Services</div>
+                                <div class="cert-date">September 2024</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-title">Deep Learning Certification</div>
+                                <div class="cert-issuer">PadhAI</div>
+                                <div class="cert-date">April 2024</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-title">IoT and Robotics on AWS Technical</div>
+                                <div class="cert-issuer">University of Michigan</div>
+                                <div class="cert-date">November 2022</div>
+                            </div>
+                            <div class="cert-item">
+                                <div class="cert-title">Python, JavaScript and Java Programming</div>
+                                <div class="cert-issuer">HackerRank</div>
+                                <div class="cert-date">June 2020</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Leadership -->
+        <section class="section bg-white-transparent">
+            <div class="container">
+                <h2>Awards & Leadership</h2>
+                <div class="card">
+                    <div class="awards-grid">
+                        <div class="award-item">
+                            <span class="award-icon icon-lg">🏆</span>
+                            <span>Top 10 position in National-level Flipkart GRID 3.0 Robotics Challenge among 5000+ participants</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon icon-lg">🏆</span>
+                            <span>Top 5 Finalist at TCS InfraMind Season 3 (2019) - Among 5000+ participants nationwide</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon icon-lg">🏆</span>
+                            <span>First Place in Mobile Controlled Robot Race (2020)</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon icon-lg">🏆</span>
+                            <span>Founded and led the Versatile Innovative Programmers (VIP) Club with 100+ students</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon icon-lg">🏆</span>
+                            <span>Successfully organized INVINCY-2k19 technical fest with 500+ participants</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="container">
+                <h2>Let's Connect</h2>
+                <p class="contact-subtitle">Ready to discuss AI/ML projects and backend development opportunities</p>
+                <div class="button-group">
+                    <a href="mailto:bhargavj2000@gmail.com" class="btn btn-secondary">
+                        <span class="icon">✉️</span>
+                        Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/bhargav-jangam/" class="btn btn-blue">
+                        <span class="icon">💼</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/jbhargav" class="btn btn-gray">
+                        <span class="icon">💻</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Bhargav Jangam. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
